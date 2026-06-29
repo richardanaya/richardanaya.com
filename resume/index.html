@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Richard Anaya — Resume</title>
+<style>
+  @font-face { font-family: "Playfair Display"; src: url("fonts/playfair-display-v40-latin-regular.ttf"); font-weight: 400; }
+  @font-face { font-family: "Playfair Display"; src: url("fonts/playfair-display-v40-latin-700.ttf"); font-weight: 700; }
+  @font-face { font-family: "Playfair Display"; src: url("fonts/playfair-display-v40-latin-900.ttf"); font-weight: 900; }
+  @font-face { font-family: "Playfair Display"; src: url("fonts/playfair-display-v40-latin-italic.ttf"); font-weight: 400; font-style: italic; }
+  @font-face { font-family: "Inter"; src: url("fonts/inter-v20-latin-regular.ttf"); font-weight: 400; }
+  @font-face { font-family: "Inter"; src: url("fonts/inter-v20-latin-500.ttf"); font-weight: 500; }
+  @font-face { font-family: "Inter"; src: url("fonts/inter-v20-latin-600.ttf"); font-weight: 600; }
+  @font-face { font-family: "Inter"; src: url("fonts/inter-v20-latin-700.ttf"); font-weight: 700; }
+  @font-face { font-family: "Inter"; src: url("fonts/inter-v20-latin-italic.ttf"); font-weight: 400; font-style: italic; }
+
+  :root {
+    --ink: #182530;
+    --navy: #16222e;
+    --navy2: #1f3242;
+    --muted: #5d6b78;
+    --gold: #c19a3d;
+    --gold-soft: #d9b96a;
+    --paper: #ffffff;
+    --tint: #f1f4f6;
+    --rule: #d8dfe5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page { size: Letter; margin: 0.52in 0 0.5in 0; }
+  @page :first { margin-top: 0; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: "Inter", "Noto Sans", sans-serif;
+    font-size: 9.1pt;
+    line-height: 1.42;
+    color: var(--ink);
+    padding: 0 0.72in;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Header band ---------- */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+    border-bottom: 3pt solid var(--gold);
+    margin: 0 -0.72in 14pt;
+    padding: 24pt 0.72in 16pt;
+    text-align: center;
+    color: #eef2f5;
+  }
+
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-size: 29pt;
+    letter-spacing: 1pt;
+    color: #ffffff;
+  }
+
+  .tagline {
+    margin-top: 6pt;
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: 2.4pt;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+  }
+
+  .contact {
+    margin-top: 9pt;
+    font-size: 8.3pt;
+    font-weight: 500;
+    letter-spacing: 0.2pt;
+    color: #b9c4cd;
+  }
+  .contact .sep { margin: 0 6pt; color: var(--gold); }
+
+  /* ---------- Sections ---------- */
+  section { margin-bottom: 8pt; }
+  .keep { break-inside: avoid; }
+
+  h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 12.5pt;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 5pt;
+    display: flex;
+    align-items: center;
+    gap: 7pt;
+  }
+  h2::before {
+    content: "";
+    width: 16pt;
+    height: 2.6pt;
+    background: var(--gold);
+    flex: none;
+  }
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 0.7pt;
+    background: var(--rule);
+  }
+
+  .summary { font-size: 9.4pt; line-height: 1.5; }
+
+  /* ---------- Experience timeline ---------- */
+  .timeline {
+    border-left: 1.4pt solid var(--rule);
+    margin-left: 3pt;
+    padding-left: 15pt;
+  }
+
+  .company { position: relative; }
+  .company + .company { margin-top: 8pt; }
+
+  .company::before {
+    content: "";
+    position: absolute;
+    left: -19.2pt;
+    top: 3.2pt;
+    width: 6.4pt;
+    height: 6.4pt;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 2pt #fff;
+  }
+
+  .company-name {
+    font-family: "Playfair Display", serif;
+    font-size: 12pt;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .role { margin-top: 3pt; }
+  .role + .role { margin-top: 7pt; }
+
+  .role-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    break-inside: avoid;
+  }
+
+  .role-title { font-weight: 700; font-size: 9.6pt; letter-spacing: 0.15pt; }
+
+  .role-meta {
+    font-size: 8.2pt;
+    color: var(--muted);
+    white-space: nowrap;
+    font-style: italic;
+  }
+
+  .role ul { margin-top: 2.5pt; padding-left: 11pt; list-style: none; }
+  .role li {
+    margin-bottom: 1.4pt;
+    position: relative;
+    break-inside: avoid;
+  }
+  .role li::before {
+    content: "";
+    position: absolute;
+    left: -10pt;
+    top: 4.6pt;
+    width: 3.4pt;
+    height: 3.4pt;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  .role p { margin-top: 2.5pt; }
+
+  /* ---------- Skills pills ---------- */
+  .skill-row { margin-bottom: 2.4pt; break-inside: avoid; }
+  .skill-label {
+    font-weight: 700;
+    font-size: 8.6pt;
+    letter-spacing: 0.3pt;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 2.2pt;
+  }
+  .pill {
+    display: inline-block;
+    background: var(--tint);
+    border: 0.7pt solid var(--rule);
+    border-radius: 8pt;
+    padding: 0.6pt 6pt 1.2pt;
+    margin: 0 2.2pt 2pt 0;
+    font-size: 8.1pt;
+    font-weight: 500;
+    color: #2c3d4c;
+  }
+
+  /* ---------- Projects / Education ---------- */
+  .projects ul { padding-left: 11pt; list-style: none; }
+  .projects li { margin-bottom: 2pt; position: relative; }
+  .projects li::before {
+    content: "";
+    position: absolute;
+    left: -10pt;
+    top: 4.6pt;
+    width: 3.4pt;
+    height: 3.4pt;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  .projects a { border-bottom: 0.8pt solid var(--gold-soft); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Richard Anaya</h1>
+  <div class="tagline">Head of Artificial Intelligence&ensp;·&ensp;Technical Leader &amp; Builder</div>
+  <div class="contact">
+    Portland, Oregon<span class="sep">◆</span>
+    <a href="mailto:richard.anaya@gmail.com">richard.anaya@gmail.com</a><span class="sep">◆</span>
+    <a href="https://linkedin.com/in/richardanaya">linkedin.com/in/richardanaya</a><span class="sep">◆</span>
+    <a href="https://richardanaya.com">richardanaya.com</a><span class="sep">◆</span>
+    <a href="https://github.com/richardanaya">github.com/richardanaya</a>
+  </div>
+</header>
+
+<section>
+  <h2>Professional Summary</h2>
+  <p class="summary">I'm an AI leader who still ships code. As Head of AI at Formant, I lead a team of 5-7, shape AI strategy with executive leadership, and write production TypeScript nearly every day building RAG and agent systems for robotics. Over 18 years across startups and large companies — Magic Leap, Evernote, Charles Schwab — I've built everything from real-time data pipelines, 3D robotics visualization, to exotic virtual reality teleoperation. What I do best is align technology and business: figuring out what's worth building and how to build it, then making it happen.</p>
+</section>
+
+<section>
+  <h2>Professional Experience</h2>
+  <div class="timeline">
+
+    <div class="company">
+      <div class="company-name">Formant</div>
+
+      <div class="role">
+        <div class="role-line">
+          <span class="role-title">Head of Artificial Intelligence</span>
+          <span class="role-meta">January 2025 – Present&ensp;·&ensp;Portland, OR</span>
+        </div>
+        <ul>
+          <li>Lead a team of 5-7 engineers, integrating contributors' work, shaping the team's roadmap with product management, and keeping the company informed through all-hands status updates.</li>
+          <li>Launched 3 major AI prototypes — work begun before stepping into the Head of AI role — that have driven the product direction for 2 years; two reached customers and now influence how they run day-to-day robotics operations.</li>
+          <li>Partnered with executive leadership and product management to shape AI strategy and roadmap, translating emerging RAG and foundation model capabilities into prioritized initiatives with clear business impact.</li>
+          <li>Built many of the earliest AI prototypes, establishing core technical patterns and de-risking key product directions through rapid, hands-on development.</li>
+          <li>Wrote and shipped production code on a near-daily basis in TypeScript (Mastra, Vercel AI SDK, and modern RAG tooling), while ensuring clean integration across multiple contributors' work.</li>
+          <li>Conducted research on models and approaches while actively aligning direction with customer needs through conversations with FDEs, sales, and leadership — ensuring technical investments had the highest probability of delivering real business results.</li>
+          <li>Aligned team skills and priorities to build sustained execution momentum, helping engineers focus on high-leverage problems with clarity under ambiguity.</li>
+          <li>Educated leadership and cross-functional stakeholders on realistic AI opportunities, tradeoffs, and integration considerations, improving organizational decision quality.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-line">
+          <span class="role-title">Staff Software Engineer</span>
+          <span class="role-meta">June 2020 – January 2025&ensp;·&ensp;Portland, OR</span>
+        </div>
+        <ul>
+          <li>Built an advanced data ingestion pipeline on AWS (PostgreSQL, Kafka, S3) for near-realtime telemetry storage and display.</li>
+          <li>Developed telemetry collection agents in Go using Pion WebRTC for realtime transmission of telemetry data to frontend web experiences.</li>
+          <li>Built Three.js and WebXR visualizations of advanced robotics data — transformation trees, URDFs, and complex environments — in the browser and on Meta Quest VR headsets.</li>
+          <li>Created architectures and open-source libraries that enable customers to extend the platform and accelerate their own success in market.</li>
+          <li>Served as a technical voice to leadership, presenting opportunities and complexity to guide strategic decisions.</li>
+          <li>Worked directly with customers to understand needs and deliver solutions that create tangible value for custom robotics visualization modules.</li>
+          <li>Led process improvements in collaboration with product to focus engineering effort on high-impact work.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="company">
+      <div class="company-name">Magic Leap</div>
+      <div class="role">
+        <div class="role-line">
+          <span class="role-title">Senior Software / Data Engineer</span>
+          <span class="role-meta">October 2016 – June 2020&ensp;·&ensp;Portland, OR</span>
+        </div>
+        <ul>
+          <li>Built the web platform for managing augmented reality app store submissions.</li>
+          <li>Developed the React frontend and a serverless backend on AWS Lambda, DynamoDB, and S3.</li>
+          <li>Enabled data scientists and business insights by writing large-scale data processing systems, automating cloud infrastructure using Databricks.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="company">
+      <div class="company-name">Evernote</div>
+      <div class="role">
+        <div class="role-line">
+          <span class="role-title">Software Engineer</span>
+          <span class="role-meta">August 2012 – May 2014&ensp;·&ensp;Austin, TX</span>
+        </div>
+        <p>Built JavaScript features for the Evernote Web client and the Skitch drawing app.</p>
+      </div>
+    </div>
+
+    <div class="company">
+      <div class="company-name">Charles Schwab</div>
+      <div class="role">
+        <div class="role-line">
+          <span class="role-title">Software Engineer</span>
+          <span class="role-meta">September 2008 – January 2011&ensp;·&ensp;Austin, TX</span>
+        </div>
+        <p>Developed UX and financial data visualization for Schwab's trading platform.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Technical Skills I Use Every Month</h2>
+  <div class="skill-row"><span class="skill-label">AI &amp; Agent Systems</span>
+    <span class="pill">Mastra AI</span><span class="pill">fal.ai</span><span class="pill">MCP servers</span><span class="pill">RAG architectures &amp; patterns</span><span class="pill">Model evaluation &amp; cost optimization</span><span class="pill">Prompt engineering</span><span class="pill">Generative AI prototyping</span>
+  </div>
+  <div class="skill-row"><span class="skill-label">Languages &amp; Frameworks</span>
+    <span class="pill">TypeScript</span><span class="pill">JavaScript</span><span class="pill">React</span><span class="pill">Node.js</span><span class="pill">React Three Fiber</span><span class="pill">Three.js</span>
+  </div>
+  <div class="skill-row"><span class="skill-label">Data, Infrastructure &amp; Cloud</span>
+    <span class="pill">PostgreSQL</span><span class="pill">Docker</span><span class="pill">Daytona pipelines</span><span class="pill">AWS</span><span class="pill">Cloud automation</span>
+  </div>
+  <div class="skill-row"><span class="skill-label">Visualization &amp; Real-time</span>
+    <span class="pill">WebSockets</span><span class="pill">Data visualization for robotics</span>
+  </div>
+  <div class="skill-row"><span class="skill-label">Leadership &amp; Process</span>
+    <span class="pill">Cross-functional technical leadership</span><span class="pill">Team alignment &amp; momentum building</span><span class="pill">Product leadership collaboration</span><span class="pill">Open-source library development</span>
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Technical Skills I've Used Deeply Before</h2>
+  <div class="skill-row"><span class="skill-label">Languages, AI &amp; Data</span>
+    <span class="pill">Python</span><span class="pill">Go</span><span class="pill">Rust</span><span class="pill">WebAssembly</span><span class="pill">Vercel AI SDK</span><span class="pill">Snowflake</span>
+  </div>
+  <div class="skill-row"><span class="skill-label">Infrastructure, Robotics &amp; Real-time</span>
+    <span class="pill">Kafka</span><span class="pill">Upstash queues</span><span class="pill">WebRTC</span><span class="pill">ROS 1/2</span><span class="pill">Google Cloud Platform</span><span class="pill">Scalable data pipelines</span>
+  </div>
+</section>
+
+<section class="projects keep">
+  <h2>Personal Projects</h2>
+  <ul>
+    <li><strong><a href="https://tourofrust.com">tourofrust.com</a></strong> — international Rust education site; 900+ GitHub stars, community-translated into 18 languages</li>
+    <li>Extensions for the <strong>pi CLI</strong> AI coding agent</li>
+    <li>AI agent experiments focused on cross-agent communication, AI looping, memory systems</li>
+    <li>Generative art projects using writing plots, video, image, and segmentation AI models for storytelling</li>
+    <li>Cooking and food science</li>
+  </ul>
+</section>
+
+<section class="keep">
+  <h2>Education</h2>
+  <p><strong>Rice University</strong> — Bachelor of Arts, Computer Science (2001 – 2005)</p>
+</section>
+
+</body>
+</html>

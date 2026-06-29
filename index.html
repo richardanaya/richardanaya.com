@@ -10,11 +10,21 @@
 html, body, a {
 	background: #3D3938;
 	color: #E9E6DD;	
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+a, h1, h2, .title-font {
 	font-family: 'Ailerons', serif;
 }
 h1 {
 	font-weight: 100;
 	font-size: 40px;
+}
+h2 {
+	font-weight: 700;
+	font-size: 28px;
+	margin-top: 32px;
 }
 .content {
 	margin-top: 50px;
@@ -23,6 +33,56 @@ h1 {
 }
 .portrait {
 	border-radius: 15px;
+}
+.now {
+	max-width: 620px;
+	margin: 0 auto 28px;
+	line-height: 1.6;
+}
+.now-copy {
+	text-align: left;
+}
+.links {
+	display: flex;
+	justify-content: center;
+	gap: 22px;
+	flex-wrap: wrap;
+	margin-top: 28px;
+}
+.links a {
+	white-space: nowrap;
+}
+.article-list {
+	max-width: 620px;
+	margin: 36px auto 0;
+	padding: 0;
+	list-style: none;
+	text-align: left;
+	line-height: 1.5;
+}
+.article-list ul {
+	padding: 0;
+	list-style: none;
+}
+.article-list li {
+	margin-bottom: 24px;
+}
+.article-list h3 {
+	font-size: 18px;
+	font-weight: 600;
+	margin: 0 0 6px;
+	line-height: 1.35;
+}
+.article-list h3 a {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.article-list p {
+	margin: 4px 0;
+	font-size: 15px;
+}
+.meta {
+	opacity: .75;
+	font-size: 14px;
 }
 
 @media only screen and (max-width: 640px) {
@@ -36,10 +96,52 @@ h1 {
 		<div class="content">
 			<img class="portrait" src="richardanaya.jpg">
 			<h1>Richard Anaya</h1>
-			<p>mad scientist & code philosopher</p>
-			<p><a href="https://codemeditations.com">Meditations</a></p>
-			<p><a href="https://github.com/richardanaya/">Projects</a></p>
-			<p><a href="https://twitter.com/codemeditations">@codemeditations</a></p>
+			<p class="title-font">Head of Artificial Intelligence</p>
+			<section class="now">
+				<h2>What I&rsquo;ve been up to in 2026?</h2>
+				<div class="now-copy">
+					<ul>
+						<li>Building a metaverse with ThreeJS, using Fable and Opus to tackle extremely hard problems in 3D: avatar rendering and rigging, visemes with AI generated audio, cloud and celestial body rendering, vegetation rendering, terrain systems, and other pieces of a living virtual world.</li>
+						<li>Building up my ultimate personal harness with Pi: lots of extensions tightly tuned into a lean and mean weapon for wielding AI against my work, including TTS and STT, Kagi search engine integration, image description tools, browser automation, and custom workflows.</li>
+						<li>Experimenting with agent swarms and messaging systems between them.</li>
+					</ul>
+				</div>
+			</section>
+			<nav class="links">
+				<a href="resume/">Resume</a>
+				<a href="https://github.com/richardanaya/">Projects</a>
+				<a href="https://www.linkedin.com/in/richardanaya/">LinkedIn</a>
+			</nav>
+			<section class="article-list">
+				<h2>Articles</h2>
+				<ul>
+					<li>
+						<h3><a href="articles/cognitive-operating-systems.html">Cognitive Operating Systems</a></h3>
+						<p class="meta">Sep 04, 2024</p>
+						<p>Abstracting the essense of interactive experiences</p>
+					</li>
+					<li>
+						<h3><a href="articles/software-research-and-development.html">Software Research and Development in the Era of Generative AI</a></h3>
+						<p class="meta">Aug 26, 2024</p>
+						<p>The instruction guide I was never given</p>
+					</li>
+					<li>
+						<h3><a href="articles/rediscovering-web-10-principles-in.html">Rediscovering Web 1.0 Principles in Virtual Worlds</a></h3>
+						<p class="meta">Sep 25, 2023</p>
+						<p>The dream of three-dimensional cyberspace was imagined decades ago in a world that did not yet have the available technology to realize it.</p>
+					</li>
+					<li>
+						<h3><a href="articles/the-psycho-epistemological-nature.html">The Psycho-Epistemological Nature of Software Development Subject Matter Experts</a></h3>
+						<p class="meta">Sep 13, 2023</p>
+						<p>How subject matter experts are formed and how managers can enable their creation through process design.</p>
+					</li>
+					<li>
+						<h3><a href="articles/objective-software-development-time.html">Objective Software Development Time Estimation For The Non-Omniscient</a></h3>
+						<p class="meta">Sep 06, 2023</p>
+						<p>A method for making software time estimates by economizing analysis to a cognitively manageable level.</p>
+					</li>
+				</ul>
+			</section>
 		</div>
 	</body>
 </html>
